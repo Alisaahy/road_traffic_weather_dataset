@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>road_traffic_weather_dataset package &#8212; road-traffic-weather-dataset  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="road-traffic-weather-dataset-package">
+<h1>road_traffic_weather_dataset package<a class="headerlink" href="#road-traffic-weather-dataset-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-road_traffic_weather_dataset.road_traffic_weather_dataset">
+<span id="road-traffic-weather-dataset-road-traffic-weather-dataset-module"></span><h2>road_traffic_weather_dataset.road_traffic_weather_dataset module<a class="headerlink" href="#module-road_traffic_weather_dataset.road_traffic_weather_dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.consolidate">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">consolidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#consolidate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.consolidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attach traffic information, weather information and county name to each road in Georgia.
+Provide functions to show statistics of the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>A dataset with 7524 rows and 22 columns, containing the traffic, weather and road characteristics.</em></p></li>
+<li><p><em>Data columns (total 22 columns)</em></p></li>
+<li><p><em>Year_Record           7524 non-null int64</em></p></li>
+<li><p><em>State_Code            7524 non-null int64</em></p></li>
+<li><p><em>Route_ID              7524 non-null object</em></p></li>
+<li><p><em>AADT                  7524 non-null float64</em></p></li>
+<li><p><em>Future_AADT           968 non-null object</em></p></li>
+<li><p><em>Road_Lat              7524 non-null float64</em></p></li>
+<li><p><em>Road_Lon              7524 non-null float64</em></p></li>
+<li><p><em>Begin_Point           7524 non-null float64</em></p></li>
+<li><p><em>End_Point             7524 non-null float64</em></p></li>
+<li><p><em>County_Code           7524 non-null float64</em></p></li>
+<li><p><em>Functional_System     7522 non-null float64</em></p></li>
+<li><p><em>Facility_Type         7522 non-null float64</em></p></li>
+<li><p><em>Ownership             7524 non-null float64</em></p></li>
+<li><p><em>Through_Lanes         7524 non-null float64</em></p></li>
+<li><p><em>County_Name           7524 non-null object</em></p></li>
+<li><p><em>Station               7524 non-null object</em></p></li>
+<li><p><em>Station_Lat           7524 non-null float64</em></p></li>
+<li><p><em>Station_Lon           7524 non-null float64</em></p></li>
+<li><p><em>Cooling_Degree_Day    7524 non-null float64</em></p></li>
+<li><p><em>Days_wDeep_Snow       7524 non-null float64</em></p></li>
+<li><p><em>Monthly_Snowfall      7524 non-null float64</em></p></li>
+<li><p><em>Monthly_Temp          7524 non-null float64</em></p></li>
+<li><p><strong>dtypes</strong> (<em>float64(16), int64(2), object(4)</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">road_traffic_weather_dataset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">road_traffic_weather_dataset</span><span class="o">.</span><span class="n">consolidate</span><span class="p">()</span>
+<span class="go">Year_Record | State_Code |     Route_ID     |  AADT  | Future_AADT |  Road_Lat | ... Days_wDeep_Snow | Monthly_Snowfall | Monthly_Temp</span>
+<span class="go">-----------------------------------------------------------------------------------------------------------------------------</span>
+<span class="go">    2018    |     13     | 1000100000100INC |  14200 |     None    | -85.154834|</span>
+<span class="go">(7524 rows × 22 columns)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.coolingday_aadt_scatter">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">coolingday_aadt_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#coolingday_aadt_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.coolingday_aadt_scatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_facility_type_AADT_catplot">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_facility_type_AADT_catplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_facility_type_AADT_catplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_facility_type_AADT_catplot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_ownership_AADT_catplot">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_ownership_AADT_catplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_ownership_AADT_catplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_ownership_AADT_catplot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_facility_type_hist">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_road_facility_type_hist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_road_facility_type_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_facility_type_hist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_ownership_hist">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_road_ownership_hist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_road_ownership_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_ownership_hist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_through_la_hist">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_road_through_la_hist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_road_through_la_hist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_road_through_la_hist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_through_la_AADT_scatter">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_through_la_AADT_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_through_la_AADT_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_through_la_AADT_scatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_dis">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_traffic_dis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_traffic_dis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_dis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_max">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_traffic_max</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_traffic_max"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_max" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_mean">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_traffic_mean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_traffic_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_mean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_min">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">county_traffic_min</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#county_traffic_min"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.county_traffic_min" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.deepsnow_aadt_scatter">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">deepsnow_aadt_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#deepsnow_aadt_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.deepsnow_aadt_scatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.snowfall_aadt_scatter">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">snowfall_aadt_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#snowfall_aadt_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.snowfall_aadt_scatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="road_traffic_weather_dataset.road_traffic_weather_dataset.temp_aadt_scatter">
+<code class="sig-prename descclassname">road_traffic_weather_dataset.road_traffic_weather_dataset.</code><code class="sig-name descname">temp_aadt_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/road_traffic_weather_dataset/road_traffic_weather_dataset.html#temp_aadt_scatter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#road_traffic_weather_dataset.road_traffic_weather_dataset.temp_aadt_scatter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-road_traffic_weather_dataset">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-road_traffic_weather_dataset" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">road-traffic-weather-dataset</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Code of Conduct</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Hengyu Ai.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/road_traffic_weather_dataset.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
